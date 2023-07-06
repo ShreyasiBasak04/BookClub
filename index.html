@@ -1,0 +1,1441 @@
+  <!DOCTYPE html>
+  <html>
+    <head><title>The Book Club</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <style type="text/css">
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+       .navbarhead {
+            width: 1465px;
+            height: 50px;
+            background-color: #4d2600;
+            color: #e6e6e6;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            z-index: 3;
+       }
+
+       .logo {
+        height:40px;
+        width:45px;
+        float: left;
+        margin:4px 5px 0 10px;
+        position: relative; 
+        z-index: 4;
+       }
+
+       .navtitle {
+        float: left;
+        font-weight: bold;
+        font-size: 1.5em;
+        position: relative;
+        top: -10px;
+        left: 200px;
+       }
+
+       .navitems {
+        background-color: #e67300;
+        width: 1465px;
+        height: 45px;
+        position: fixed;
+        z-index: 3;
+        margin-top: 50px;
+       }
+
+       .navitems ul {
+        position: relative;   
+        left: 165px;
+        padding: 0;
+        margin: 0;
+       }
+
+       .navitems li {
+        float: left;
+        color: white;
+        list-style: none;
+        padding: 12px 150px 10px 0px;
+       }
+
+       a {
+        text-decoration:none;
+        color:white;
+       }
+
+       a:hover {
+        text-decoration:underline;
+       }
+
+       .hide1 {
+        display: none;
+       }
+
+       .hide2 {
+        display: none;
+       }
+
+       .hide3 {
+        display: none;
+       }
+
+       .hide4 {
+        display: none;
+       }
+
+       .hide5 {
+        display: none;
+       }
+
+       .hov1:hover + .hide1 {
+        display: block;
+        color:black;
+       }
+
+       .navbar {
+        background-image: url("reavingnavbar.png");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size:150px 95px;
+        background-blend-mode: overlay;
+        
+       }
+
+       #middle {
+        height: 250px;
+        width: 550px;
+        border-top-left-radius: 250px;
+        border-bottom-right-radius: 250px;
+        margin:100px 10px 0 10px;
+        position: relative;
+        left: 10px;
+        z-index: 2;
+       }
+
+       #left {
+        height: 250px;
+        width: 420px;
+        border-top-right-radius: 250px;
+        margin-top: 100px;
+        position:relative;
+        left: 20px;
+        z-index: 2;
+       }
+
+       #right {
+        height: 250px;
+        width: 435px;
+        border-bottom-left-radius: 250px;
+        margin-top: 100px;
+        position:relative;
+        left: 2px;
+        z-index: 2;
+       }
+
+       .intermediate {
+        background-image: linear-gradient(#ffd699,#ffc266,#ffad33,#ffa31a);
+        height: 600px;
+        width: 1465px;
+        position: relative;
+        z-index: 2;
+       }
+
+       .intermediate p{
+        font-size: 300%;
+        text-align: center;
+        font-style: italic;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:#4d0000;
+        position: relative;
+        z-index: 2;
+       }
+
+       #scroll {
+        margin-top: 10px;
+        position: relative;
+        left: 40px;
+        height: 45px;
+        width: 45px;
+        z-index: 2;
+       }
+
+       .backdrop1 {
+        opacity: 0.2;
+        height: 400px;
+        width: 1465px;
+        position: relative;
+        z-index: 1;
+        top: -300px;
+       }
+
+       .backdrop2 {
+        opacity: 0.2;
+        height: 400px;
+        width: 1465px;
+        position: relative;
+        z-index: 1;
+        top: -1006px;
+       }
+
+       .backdrop3 {
+        opacity: 0.2;
+        height: 440px;
+        width: 1465px;
+        position: relative;
+        z-index: 1;
+        top: -1115px;
+        left: 707px;
+       }
+
+       .backdrop4 {
+        opacity: 0.2;
+        height: 400px;
+        width: 1465px;
+        position: relative;
+        z-index: 1;
+        top: -1846px;
+        left: 707px;
+       }
+
+       .intropage {
+        display: flex;
+        height: 700px;
+        width: 1465px;
+        justify-content: row-reverse;
+        border: 1px grey solid;
+        background-color: antiquewhite;
+       }
+
+       .coverpic {
+        margin-top: 60px;
+        margin-left: 40px;
+       }
+
+       .coverpic img {
+        border: 2px brown solid;
+       }
+
+       #bookclubhead {
+        font-weight: bold;
+        color: brown;
+        margin: 80px 0 0 100px;
+        text-align: center;
+        font-size: 300%;
+       }
+
+       .bookclubsubhead {
+        margin-top: 50px;
+        text-align: center;
+        font-style: italic;
+       }
+
+       #subtitle {
+        position: relative;
+        left: 50px;
+        font: Garamond;
+        font-size: 120%;
+       }
+
+       #quote {
+        position: relative;
+        left: 15px;
+        width: 600px;
+        font-style: italic;
+        font: Garamond;
+       }
+
+       #secline {
+        position: relative;
+        left: 15px;
+       }
+
+       #fadedintro {
+        height: 330px;
+        width: 300px;
+        opacity: 0.45;
+        position: relative;
+        left: -45px;
+        top: 370px;
+       }
+
+       #faded1 {
+        height: 300px;
+        width: 300px;
+        opacity: 0.35;
+        border-top-left-radius: 200px;
+        position: relative;
+        top: -260px;
+        left: -44px;
+       }
+
+       #faded2 {
+        height: 330px;
+        width: 400px;
+        opacity: 0.25;
+        position: relative;
+        left: -446px;
+        top: -261px;
+        border-top-left-radius: 300px;
+        z-index: 1;
+       }
+
+       #bestsellerbutton {
+        height: 30px;
+        width: 120px;
+        position: relative;
+        z-index: 2;
+        top: 100px;
+        left: 275px;
+        border: 1px brown solid;
+       }
+
+       #bestsellertitle {
+        background-color:#502a03;
+        color:aliceblue;
+        text-align: center;
+        width: 1465px;
+        height: 75px;
+        position: relative;
+        z-index: 2;
+       }
+
+       #bestsellertitle h1 {
+        position: relative;
+        top: 17px;
+        font-style: italic;
+
+       }
+
+       #bestsellersection {
+        background-color:#ffd699;
+        width: 1465px;
+        height: 740px;
+        position: relative;
+        z-index: 1;
+       }
+
+       #bestsellersubtext {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        font-style: italic;
+        font-size: 150%;
+       }
+
+       .cards {
+        position: relative;
+        z-index: 2;
+        width: 1465px;
+        height: 500px;
+        
+       }
+
+       .card1 {
+        width: 250px;
+        height: 500px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 150px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .card2 {
+        width: 250px;
+        height: 500px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 180px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .card3 {
+        width: 250px;
+        height: 500px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 210px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+
+       .card4 {
+        width: 250px;
+        height: 500px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 240px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+
+       .cards img {
+        height: 200px;
+        width: 195px;
+        margin-top: 20px;
+        border-radius: 10px;
+       }
+
+       #Addbutton1 {
+        width: 80px;
+        position: relative;
+        top: 19px;
+        left: -70px;
+        background-color:#ffc266;
+        cursor: pointer;
+        font-weight: bold;
+       }
+
+       #Addbutton2 {
+        width: 80px;
+        position: relative;
+        left: -70px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       #Addbutton3 {
+        width: 80px;
+        position: relative;
+        left: -70px;
+        top: 57px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       #Addbutton4 {
+        width: 80px;
+        position: relative;
+        left: -70px;
+        top: 2px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .price {
+        width: 70px;
+        height: 40px;
+       }
+
+       .price1 {
+        position: relative;
+        left: 160px;
+       }
+
+       .price2 {
+        position: relative;
+        top: -20px;
+        left: 160px;
+       }
+
+       .price3 {
+        position: relative;
+        top: 37px;
+        left: 160px;
+       }
+
+       .price4 {
+        position: relative;
+        top: -18px;
+        left: 160px;
+       }
+
+       #recommendsection {
+        background-color:#ffd699;
+        width: 1465px;
+        height: 710px;
+        position: relative;
+        z-index: 1;
+       }
+
+       #recommendtitle {
+        background-color:#502a03;
+        color:aliceblue;
+        text-align: center;
+        width: 1465px;
+        height: 75px;
+        position: relative;
+        z-index: 2;
+        margin-top: 15px;
+       }
+
+       #recommendtitle h1 {
+        position: relative;
+        top: 17px;
+        font-style: italic;
+       }
+
+       #recommendsubtext {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        font-style: italic;
+        font-size: 150%;
+       }
+
+       #searchbox {
+        height: 40px;
+        width: 350px;
+        background-image:url("search.png");
+        border: 2px #502a03 solid;
+        padding-left: 10px;
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        background-position: right center;
+        position: relative;
+        z-index: 2;
+        top: -35px;
+       }
+
+       .morecards {
+        position: relative;
+        z-index: 2;
+        width: 1465px;
+        height: 450px;
+       }
+
+       .morecards img {
+        height: 160px;
+        width: 160px;
+        margin-top: 20px;
+        border-radius: 10px;
+       }
+
+       .c1 {
+        width: 210px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .c1 p {
+        font-size: 85%;
+       }
+
+       #addbut1 {
+        position: relative;
+        left: -60px;
+        top: 15px;
+        width: 65px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .p1 {
+        position: relative;
+        left: 130px;
+        top: -7px;
+       }
+
+       .c2 {
+        width: 210px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .c2 p {
+        font-size: 85%;
+       }
+
+       #addbut2 {
+        position: relative;
+        left: -60px;
+        top: 63px;
+        width: 65px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .p2 {
+        position: relative;
+        left: 130px;
+        top: 42px;
+       }
+
+       .c3 {
+        width: 210px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 70px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .c3 p {
+        font-size: 85%;
+       }
+
+       #addbut3 {
+        position: relative;
+        left: -60px;
+        top: 11px;
+        width: 65px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .p3 {
+        position: relative;
+        left: 130px;
+        top: -8px;
+       }
+
+       .c4 {
+        width: 210px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 80px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .c4 p {
+        font-size: 85%;
+       }
+
+       #addbut4 {
+        position: relative;
+        left: -60px;
+        top: 26px;
+        width: 65px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .p4 {
+        position: relative;
+        left: 130px;
+        top: 7px;
+       }
+
+       .c5 {
+        width: 210px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 90px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .c5 p {
+        font-size: 85%;
+       }
+
+       #addbut5 {
+        position: relative;
+        left: -60px;
+        top: 25px;
+        width: 65px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .p5 {
+        position: relative;
+        left: 130px;
+        top: 6px;
+       }
+
+       .c6 {
+        width: 210px;
+        height: 380px;
+        position: relative;
+        z-index: 2;
+        float: left;
+        border: 2px brown solid;
+        text-align: center;
+        background-color:antiquewhite;
+        left: 100px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+       }
+
+       .c6 p {
+        font-size: 85%;
+       }
+
+       #addbut6 {
+        position: relative;
+        left: -60px;
+        top: 60px;
+        width: 65px;
+        background-color:#ffc266;
+        font-weight: bold;
+       }
+
+       .p6 {
+        position: relative;
+        left: 130px;
+        top: 40px;
+       }
+
+       #reviewsection {
+        background-color:#ffd699;
+        width: 1465px;
+        height: 710px;
+        position: relative;
+        z-index: 1;
+       }
+
+       #reviewtitle {
+        background-color:#502a03;
+        color:aliceblue;
+        text-align: center;
+        width: 1465px;
+        height: 75px;
+        position: relative;
+        z-index: 2;
+        margin-top: 15px;
+       }
+
+       #reviewtitle h1 {
+        position: relative;
+        top: 17px;
+        font-style: italic;
+       }
+
+       .pplreviews {
+        height: 610px;
+        width: 900px;
+        margin-top: 10px;
+        margin-left: 15px;
+        position: relative;
+        z-index: 2;
+       }
+
+       .r1 {
+        height: 295px;
+        width: 350px;
+        background-color: antiquewhite;
+        border: 2px brown solid;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        float: left;
+        margin: 25px 0 0 45px;
+       }
+
+       .r1 img {
+        height: 150px;
+        width: 150px;
+        margin: 10px 0 0 10px;
+        position: relative;
+        left: -65px;
+       }
+
+       .r1title {
+        float: left;
+        position: relative;
+        left: 210px;
+       }
+
+       .pplnamer1 {
+        position: relative;
+        left: 190px; !important;
+        top: -140px; !important;
+        font-size: 1.1em;
+       }
+
+       .r1text {
+        position: relative;
+        top: -45px;
+        margin-left: 12px;
+       }
+
+       #liker1 {
+        width: 70px;
+        position: relative;
+        top: -35px;
+        left: 15px;
+       }
+
+       #commentr1 {
+        width: 70px;
+        position: relative;
+        top: -35px;
+        left: 195px;
+       }
+
+       .r2 {
+        height: 295px;
+        width: 350px;
+        background-color: antiquewhite;
+        border: 2px brown solid;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        float: left;
+        margin: 25px 0 0 45px;
+        position: relative;
+       }
+
+       .r2 img {
+        height: 150px;
+        width: 150px;
+        margin: 10px 0 0 10px;
+        position: relative;
+        left: -65px;
+       }
+
+       .r2title {
+        float: left;
+        position: relative;
+        left: 210px;
+       }
+
+       .pplnamer2 {
+        position: relative;
+        left: 190px; !important;
+        top: -140px; !important;
+        font-size: 1.1em;
+       }
+
+       .r2text {
+        position: relative;
+        top: -45px;
+        margin-left: 12px;
+       }
+
+       #liker2 {
+        width: 70px;
+        position: relative;
+        top: -52px;
+        left: 15px;
+       }
+
+       #commentr2 {
+        width: 70px;
+        position: relative;
+        top: -52px;
+        left: 195px;
+       }
+
+       .r3 {
+        height: 205px;
+        width: 745px;
+        background-color: antiquewhite;
+        border: 2px brown solid;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 15px 0 0 45px;
+        position: relative;
+        top: 350px;
+       }
+
+       .r3 img {
+        height: 180px;
+        width: 150px;
+        margin: 10px 0 0 10px;
+        position: relative;
+        top: -317px;
+        left: -65px;
+       }
+
+       .r3title {
+        float: left;
+        position: relative;
+        top: -310px;
+        left: 200px;
+       }
+
+       .pplnamer3 {
+        position: relative;
+        font-size: 1.1em;
+        top: -480px;
+        left: 200px;
+       }
+
+       .r3text {
+        position: relative;
+        margin-left: 12px;
+        top: -480px;
+        left: 185px;
+       }
+
+       #liker3 {
+        width: 70px;
+        position: relative;
+        top: -475px;
+        left: 535px;
+       }
+
+       #commentr3 {
+        width: 70px;
+        position: relative;
+        top: -475px;
+        left: 590px;
+       }
+
+       .reviewform {
+        width: 500px;
+        height: 600px;
+        margin-top: 25px;
+        background-color:antiquewhite;
+        float: left;
+        position: relative;
+        z-index: 2;
+        top: -630px;
+        left: 930px;
+        border:2px #502a03 solid;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+
+       .formhead {
+        text-align: center;
+       }
+
+       .formsubhead {
+        text-align: center;
+       }
+
+       #fname {
+        width: 350px;
+        margin-left: 12px;
+        padding-left: 10px;
+        position: relative;
+        top: 7px;
+       }
+
+       #firstname {
+        margin-left: 12px;
+       }
+
+       .astr1 {
+        color: maroon;
+       }
+
+       #lname {
+        width: 350px;
+        margin-left: 12px;
+        padding-left: 10px;
+        position: relative;
+        top: 7px;
+       }
+
+       #lastname {
+        margin-left: 12px;
+       }
+
+       #email {
+        width: 400px;
+        margin-left: 12px;
+        padding-left: 10px;
+        position: relative;
+        top: 7px;
+       }
+
+       #emailid {
+        margin-left: 12px;
+       }
+
+       #cc {
+        width: 40px;
+        margin-left: 12px;
+        padding-left: 10px;
+        position: relative;
+        top: 7px;
+       }
+
+       #cn {
+        width: 200px;
+        margin-left: 12px;
+        padding-left: 10px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+       }
+       
+
+       #contact {
+        margin-left: 12px;
+       }
+
+       #rating {
+        margin-left: 12px;
+       }
+
+       .rate {
+        margin-left: 12px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+       }
+
+       .ratetext {
+        position: relative;
+        left: 9px;
+        top: 4px;
+       }
+
+       #feed {
+        width: 430px;
+        height: 80px;
+        margin-left: 12px;
+        padding-left: 10px;
+        position: relative;
+        top: 7px;
+       }
+
+       #feedback {
+        margin-left: 12px;
+       }
+
+       #submit{
+        margin-left: 220px;
+        margin-top: 15px;
+       }
+
+       #note {
+       margin-left: 65px;
+       }
+
+       #footersec {
+        width: 1465px;
+        height: 200px;
+        background-color:#e67300;
+        margin-top: 10px;
+       }
+
+       .fa {  
+         padding: 20px;  
+         text-align: center;  
+         margin: 15px 4px;  
+         font-size: 30px;  
+         width: 25px;  
+        }  
+
+        .fa-facebook {  
+         background: #3B5998;  
+         color: white;  
+        }  
+
+        .fa-twitter {  
+         background: #55ACEE;  
+         color: white;  
+        } 
+        
+        .fa-linkedin {  
+         background: #007bb5;  
+         color: white;  
+        }  
+        .fa-instagram {  
+         background: #125688;  
+         color: white;  
+        }  
+
+        .fa:hover {  
+         opacity: 0.9;  
+        }  
+
+        .tac {
+            position: relative;
+            left: -430px;
+        }
+        .pl {
+            position: relative;
+            left: -430px;
+        }
+        .cp {
+            position: relative;
+            left: -430px;
+        }
+
+        #btt {
+            position: relative;
+            left: 400px;
+            top: -35px;
+            width: 160px;
+            height: 30px;
+            background-color: #ffc266;
+        }
+
+    </style>
+    <script>
+        function myFunction1() {
+          var x = document.getElementById("addbut1");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction2() {
+          var x = document.getElementById("addbut2");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction3() {
+          var x = document.getElementById("addbut3");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction4() {
+          var x = document.getElementById("addbut4");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction5() {
+          var x = document.getElementById("addbut5");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction6() {
+          var x = document.getElementById("addbut6");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction7() {
+          var x = document.getElementById("Addbutton1");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction8() {
+          var x = document.getElementById("Addbutton2");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction9() {
+          var x = document.getElementById("Addbutton3");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+          function myFunction10() {
+          var x = document.getElementById("Addbutton4");
+          if (x.innerHTML === "Add+") {
+            x.innerHTML = "Added";
+          } else {
+            x.innerHTML = "Add+";
+          }
+        }
+        function myFunction11() {
+          var x = document.getElementById("liker1");
+          if (x.innerHTML === "Like") {
+            x.innerHTML = "Liked";
+          } else {
+            x.innerHTML = "Like";
+          }
+        }
+        function myFunction12() {
+          var x = document.getElementById("liker2");
+          if (x.innerHTML === "Like") {
+            x.innerHTML = "Liked";
+          } else {
+            x.innerHTML = "Like";
+          }
+        }
+        function myFunction13() {
+          var x = document.getElementById("liker3");
+          if (x.innerHTML === "Like") {
+            x.innerHTML = "Liked";
+          } else {
+            x.innerHTML = "Like";
+          }
+        }
+        </script>
+    </head>
+    <body>
+        <div class="navbar">
+        <div class="navbarhead">
+          
+            <img class="logo" src="booklogo.png" />
+            <p class="navtitle">READER'S GUIDE</p>
+        </div>
+
+        <div class="navitems">
+            <ul>
+                <li  class="hov1"><a href="#intro">Intro</a></li>
+                <li class="hov2"><a href="#bestseller">Our Best-Sellers</a></li>
+                <li class="hov3"><a href="#recommend">Our Recommendations</a></li>
+                <li class="hov4"><a href="#reviews">Reviews</a></li>
+                <li class="hov5"><a href="#findus">Find Us</a></li>
+            </ul>
+            <div class="hide1">Welcome to The Book Club! Check-out our Intro Page for more information</div>
+            <div class="hide2">Check out our most popular books by the best selling authors of 2023</div>
+            <div class="hide3">Go through our recommendation page to find books on fiction, sci-fi, mythology and more...</div>
+            <div class="hide4">Check out the reviews on our webpage!</div>
+            <div class="hide5">Find us on various social media platforms!</div>
+        </div>
+        </div>
+
+        <div class="intermediate">
+             <a id="top"></a>
+             <img id="left" src="read4.png" />
+             <img id="middle" src="reavingnavbar.png" />
+             <img id="right" src="read2.png" />
+             <p>Scroll Down To Explore The World Of Reading At The Book Club</p>
+             <p><a href="#intro"><img id="scroll" src="scrolldown.png" /></a></p>
+             <p></p>
+             <p></p>
+             <div class="backdrop1"><img src="books.png" /></div>
+             <div class="backdrop2"><img src="books.png" /></div>
+             <div class="backdrop3"><img src="books.png" /></div>
+             <div class="backdrop4"><img src="books.png" /></div>
+        </div>
+
+        <div class="intropage">
+            <a id="intro"></a>
+            <div class="coverpic"><img src="bookshopcover.png" /></div>
+            <div class="bookclub">
+                <h2 id="bookclubhead"><em>The Book Club</em></h2>
+                <h3 class="bookclubsubhead"><span id="subtitle"><strong>&nbsp;&nbsp;Where Reading Is A Passion</strong></span><p id="quote">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"The easiest way to open your mind<br /> &nbsp;&nbsp;&nbsp;&nbsp;<span id="secline">to new ideas and concepts is</span><br />&nbsp;&nbsp; to open a book and<br />read...."</p></h3>
+                <div>
+                    <a href="#bestseller"><img id="bestsellerbutton" src="C:\Users\shrey\OneDrive\Desktop\Shreyasi ED\Web_developement_HTML\bestsellerbutton.png" /></a>
+                </div>
+            </div>
+            <div>
+            <img id="fadedintro" src="introimage.png" />
+            <img id="faded1" src="introimage2.png" />
+            <img id="faded2" src="introimage3.png" />
+            </div>
+            
+        </div>
+
+        <div id="bestsellersection">
+            <a id="bestseller"></a>
+            <div id="bestsellertitle"><h1>Best-Selling Books</h1></div>
+            <div id="bestsellersubtext"><h4>Browse through the books by the International Best-Selling authors of 2023...</h4></div>
+            <div class="cards">
+            <div class="card1">
+                <img src="gobletoffire.png" />
+                <h3>Harry Potter: The Goblet of Fire</h3>
+                <h4>JK Rowling</h4>
+                <h5>Fiction</h5>
+                <p>Upto 20% discount available on the book and 5% discount on the other books of this series</p>
+                <button onclick="myFunction7()" id="Addbutton1">Add+</button>
+                <div class="price price1"><strong>₹430.00</strong></div>
+            </div>
+
+            <div class="card2">
+                <img src="sherlockholmes.png" />
+                <h3>The Adventures of Sherlock Holmes</h3>
+                <h4>Sir Arthur Conan Doyle</h4>
+                <h5>Detective Fiction</h5>
+                <p>Engage yourselves in a battle of wits alongside the great consulting detective Sherlock Holmes through this timeless classic</p>
+                <button onclick="myFunction8()" id="Addbutton2">Add+</button>
+                <div class="price price2"><strong>₹390.00</strong></div>
+            </div>
+
+            <div class="card3">
+                <img src="davincicode.png" />
+                <h3>The Da Vinci Code</h3>
+                <h4>Dan Brown</h4>
+                <h5>Crime Fiction</h5>
+                <p>15% discount available on purchases till 20th August 2023</p>
+                <button onclick="myFunction9()" id="Addbutton3">Add+</button>
+                <div class="price price3"><strong>₹560.00</strong></div>
+            </div>
+
+            <div class="card4">
+                <img src="wingsoffire.png" />
+                <h3>The Wings of Fire</h3>
+                <h4>APJ Abdul Kalam</h4>
+                <h5>Autobiography</h5>
+                <p>Check out the journey from an ordinary boy of South Indian to the Missile Man and President of India, through the eyes of Dr. APJ Abdul Kalam</p>
+                <button onclick="myFunction10()" id="Addbutton4">Add+</button>
+                <div class="price price4"><strong>₹320.00</strong></div>
+            </div>
+            </div>
+        </div>
+
+        <div id="recommendsection">
+                <a id="recommend"></a>
+                <div id="recommendtitle"><h1>Our Recommendations</h1></div>
+                <div id="recommendsubtext"><h5>Check out our top recommendations for a smooth reading journey...</h5>
+                <br /><input id="searchbox" type="text" placeholder="Search for your favourite books">
+                </div>
+                <div class="morecards">
+                    <div class="c1">
+                        <img src="wingsoffire.png" />
+                        <h3>The Wings of Fire</h3>
+                        <p>Check out the journey from an ordinary boy of South Indian to the Missile Man and President of India, through the eyes of Dr. APJ Abdul Kalam</p>
+                        <button onclick="myFunction1()" id="addbut1">Add+</button>
+                        <div class="price p1"><strong>₹320.00</strong></div>
+                    </div>
+                    <div class="c2">
+                        <img src="davincicode.png" />
+                        <h3>The Da Vinci Code</h3>
+                        <p>15% discount available on purchases till 20th August 2023</p>
+                        <button onclick="myFunction2()" id="addbut2">Add+</button>
+                        <div class="price p2"><strong>₹560.00</strong></div>
+                    </div>
+                    <div class="c3">
+                        <img src="sherlockholmes.png" />
+                        <h3>The Adventures of Sherlock Holmes</h3>
+                        <p>Engage yourselves in a battle of wits alongside the great consulting detective Sherlock Holmes through this timeless classic</p>
+                        <button onclick="myFunction3()" id="addbut3">Add+</button>
+                        <div class="price p3"><strong>₹390.00</strong></div>
+                    </div>
+                    <div class="c4">
+                        <img src="gobletoffire.png" />
+                        <h3>Harry Potter: The Goblet of Fire</h3>
+                        <p>Upto 20% discount available on the book and 5% discount on the other books of this series</p>
+                        <button onclick="myFunction4()" id="addbut4">Add+</button>
+                        <div class="price p4"><strong>₹430.00</strong></div>
+                    </div>
+                    <div class="c5">
+                        <img src="narnia.png" />
+                        <h3>The Lion, the Witch and the Wardrobe</h3>
+                        <p>Check out this exhilariting and thrilling fantasy-fiction of the Narnia series</p>
+                        <button onclick="myFunction5()"  id="addbut5">Add+</button>
+                        <div class="price p5"><strong>₹530.00</strong></div>
+                    </div>
+                    <div class="c6">
+                        <img src="malgudi.png" />
+                        <h3>Malgudi Days</h3>
+                        <p>Flat 20% discount available on this top classic by R.K. Narayan</p>
+                        <button onclick="myFunction6()" id="addbut6">Add+</button>
+                        <div class="price p6"><strong>₹295.00</strong></div>
+                    </div>
+        
+                </div>
+        </div>
+
+        <div id="reviewsection">
+            <a id="reviews"></a>
+            <div id="reviewtitle"><h1>Reviews</h1></div>
+            <div class="pplreviews">
+                <div class="r1">
+                     <img src="jkr.png" />
+                     <p class="r1title">Review by <br /><h4 class="pplnamer1"><strong>Joanne Kenneth</strong></h4></p>
+                     <p class="r1text">Excellent experience at the Book Club! The best books from across the world available at affordable prices...Wish to come here again</p>
+                     <button onclick="myFunction11()" id="liker1">Like</button>
+                     <button id="commentr1">Comment</button>
+                </div>
+                <div class="r2">
+                    <img src="rr.png" />
+                    <p class="r2title">Review by <br /><h4 class="pplnamer2"><strong>Henry George</strong></h4></p>
+                    <p class="r2text">The Book Club has a wide selection of books, including fiction, nonfiction, children's books, and textbooks. The store also has a large selection of magazines and newspapers.</p>
+                    <button onclick="myFunction12()" id="liker2">Like</button>
+                    <button id="commentr2">Comment</button>
+               </div>
+               <div class="r3">
+                <img src="ew.png" />
+                <p class="r3title">Review by <br /><h4 class="pplnamer3"><strong>Emma Duerre</strong></h4></p>
+                <p class="r3text">I was able to find the books I was looking for quickly and easily. The staff was<br /> friendly and helpful.The prices were reasonable.I would definitely shop at the Book<br /> Club again.</p>
+                <button onclick="myFunction13()" id="liker3">Like</button>
+                <button id="commentr3">Comment</button>
+           </div>
+            </div>
+            <div class="reviewform">
+               <div class="formhead"><h3><strong>Submit your Reviews</strong></h3></div>
+               <div class="formsubhead"><h4>Please take some time to give your valuable feedback</h4></div>
+               <form>
+                  <span id="firstname">First Name<span class="astr1">*</span>:</span>
+                  <br />
+                  <input id="fname" type="text" placeholder="Enter your first name"><br /><br />
+                  <span id="lastname">Last Name<span class="astr1">*</span>:</span>
+                  <br />
+                  <input id="lname" type="text" placeholder="Enter your last name"><br /><br />
+                  <span id="emailid">Email Address<span class="astr1">*</span>:</span>
+                  <br />
+                  <input id="email" type="text" placeholder="Enter your E-mail ID"><br /><br />
+                  <span id="contact">Contact Details:</span>
+                  <br />
+                  <input id="cc" type="text" placeholder="+91">
+                  <input id="cn" type="text" placeholder="Contact Number"><br /><br />
+                  <span id="rating">Rate your Experience<span class="astr1">*</span>:</span>
+                  <br />
+                  <input class="rate" type="radio" /><span class="ratetext"> Excellent</span>
+                  <input class="rate" type="radio" /><span class="ratetext"> Very Good</span>
+                  <input class="rate" type="radio" /><span class="ratetext"> Moderate</span>
+                  <input class="rate" type="radio" /><span class="ratetext"> Not Good</span>
+                  <input class="rate" type="radio" /><span class="ratetext"> Poor</span>
+                  <br /><br />
+                  <span id="feedback">Submit your Review<span class="astr1">*</span>:</span>
+                  <br />
+                  <input id="feed" type="text" placeholder="Enter your feedback"><br /><br />
+                  <input id="submit" type="submit"><br /><br />
+                  <span id="note">NOTE: Fields marked with <span class="astr1">*</span> are compulsory to fill.</span>
+               </form>
+            </div>
+        </div>
+
+        <div id="footersec">
+            <a id="findus"></a>
+            <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"></a>  
+            <a href="https://www.twitter.com/" class="fa fa-twitter" target="_blank"></a> 
+            <a href="https://www.linkedin.com/" class="fa fa-linkedin" target="_blank"></a>  
+            <a href="https://www.instagram.com/" class="fa fa-instagram" target="_blank"></a> 
+            <br /><br />
+            <a href="https://www.broadridge.com/legal/terms-of-use" class="tac" target="_blank">Terms & Conditions</a><br />
+            <a href="https://www.broadridge.com/legal/terms-of-use" class="pl" target="_blank">Privacy Policy</a><br />
+            <a href="https://www.broadridge.com/legal/terms-of-use" class="cp" target="_blank">© Copyright Policy 2023</a>
+            <a href="#top"><button id="btt">Back To Top</button></a>
+        </div>
+        
+
+
+    </body>
+   </html>
